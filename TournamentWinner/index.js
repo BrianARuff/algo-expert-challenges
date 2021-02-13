@@ -1,6 +1,6 @@
 function tournamentWinner(competitions, results) {
     // Write your code here.
-    var teamsData = {};
+    let teamsData = {};
     let highScore = {score: 0, name: ""};
     for (var i = 0; i < competitions.length; i++) {
         if (results[i] === 1) {
