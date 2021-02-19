@@ -1,14 +1,13 @@
 function nonConstructibleChange(coins) {
-  let change = [coins.reduce((a,c) => a + c, 0)];
-  coins.sort((a,b) => a - b);
-  for (let index = 0; index < coins.length; index++) {
-    const element = coins[index];
-    if (element > change) {
-      return element + 1;
+  coins.sort((a, b) => a - b);
+  let sum = 0;
+  for (let i = 0; i < coins.length; i++) {
+    if (coins[i] > sum + 1) {
+      return sum + 1;
     } else {
-      change += element
+      sum += coins[i];
     }
   }
+  return sum + 1;
 }
-
 console.log(nonConstructibleChange([5, 7, 1, 1, 2, 3, 22]));
